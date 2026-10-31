@@ -1,3 +1,5 @@
 spring:
   application:
     name: aws-practice
+  profiles:
+    include: secret

@@ -1,5 +1,6 @@
 package com.back.awspractice
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -7,9 +8,13 @@ import org.springframework.web.bind.annotation.RestController
 class HomeController(
     private val s3Service: S3Service
 ) {
+
+    @Value($$"${custom.secretWord}")
+    private val secretWord : String = ""
+
     @GetMapping
     fun main() : String {
-        return "Hi"
+        return "Hi, $secretWord"
     }
 
     @GetMapping("/buckets")

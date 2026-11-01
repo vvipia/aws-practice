@@ -14,7 +14,7 @@ class HomeController(
 
     @GetMapping
     fun main() : String {
-        return "Hi, $secretWord"
+        return "Hi, $secretWord 자동 배포가 되었는가???"
     }
 
     @GetMapping("/buckets")
